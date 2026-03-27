@@ -8,19 +8,34 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
 <!-- HEADER -->
 <header class="navbar">
-  <div class="nav-left">
-    <h2 class="logo-text">Vagdevi Commerce College</h2>
+  <div class="logo-box">
+
+  <!-- LOGO -->
+  <img src="logo.png" alt="Vagdevi Logo" class="logo-img">
+
+  <!-- TEXT -->
+  <div class="logo-text">
+    <h2>Vagdevi Commerce College</h2>
+    <span>Visakhapatnam | Since 2014</span>
+    <span>Recognised by Govt. of Andhra Pradesh</span>
   </div>
 
+</div>
   
-  <nav>
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="nav-menu">
   <a href="#home" class="active">Home</a>
   <a href="#programs">Programs</a>
   <a href="#features">Features</a>
@@ -46,39 +61,45 @@
       <button class="primary">Apply Now →</button>
       <button class="secondary" onclick="scrollToSection('counselling')">Book Counselling</button>
     </div>
-
-    <div class="stats">
-      <div>
-        <h3>1000+</h3>
-        <p>Students Enrolled</p>
-      </div>
-      <div>
-        <h3>95%</h3>
-        <p>Success Rate</p>
-      </div>
-      <div>
-        <h3>25+</h3>
-        <p>Years Excellence</p>
-      </div>
-    </div>
   </div>
 
   <div class="hero-right">
+    
+    <div class="slider single">
 
-  <div class="slider single">
-    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" class="slide active">
-    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" class="slide">
-  </div>
+        <img src="im1.jpeg" class="active">
+        <img src="faculty2.png">
 
-  <div class="floating-card">
-    <div class="icon">🏆</div>
-    <div>
-      <small>AIR Ranks</small>
-      <h4>Top Achievers</h4>
+        <!-- ✅ MOVE HERE -->
+        <div class="floating-card">
+            <div class="icon">🏆</div>
+            <div>
+                <p>AIR Ranks</p>
+                <strong>Top Achievers</strong>
+            </div>
+        </div>
+
     </div>
+
   </div>
 
-</div>
+</section>
+<section class="stats-bar">
+
+  <div class="stat">
+    <h3 data-target="4000">0</h3>
+    <p>Students Enrolled</p>
+  </div>
+
+  <div class="stat">
+    <h3 data-target="60">0</h3>
+    <p>Average Success Rate in first attempt(%)</p>
+  </div>
+
+  <div class="stat">
+    <h3 data-target="14">0</h3>
+    <p>Years Excellence</p>
+  </div>
 
 </section>
 
@@ -89,17 +110,27 @@
   <p class="sub">Choose from our comprehensive range of commerce and professional courses</p>
 
   <div class="program-grid">
+    <div class="program-card"> 
+  <div class="icon green">⭐</div>
+  <h3>Super 40 (MEC / CEC)</h3>
+  <p>Elite program designed for CA Foundation.</p>
+  <ul>
+    <li>CA Foundation completed in 1st year</li>
+    <li>2nd year focused on revision & exams</li>
+    <li>Intensive writing practice & tests</li>
+  </ul>
+  </div>
 
     <div class="program-card">
       <div class="icon blue">📘</div>
       <h3>Inter (MEC / CEC)</h3>
       <p>Build a strong foundation with our programs.</p>
       <ul>
-        <li>Expert Faculty</li>
-        <li>Regular Tests</li>
-        <li>Study Material</li>
+        <li>Expert Faculty Guidance</li>
+        <li>Regular Weekly Tests</li>
+        <li>Complete Study Material</li>
+        <li>Strong Concept Building</li>
       </ul>
-      <a href="#">Learn More →</a>
     </div>
 
     <div class="program-card">
@@ -107,11 +138,11 @@
       <h3>CA Courses</h3>
       <p>Industry experienced coaching.</p>
       <ul>
-        <li>Foundation</li>
-        <li>Intermediate</li>
-        <li>Final</li>
+        <li>Foundation to Final Support</li>
+        <li>Industry Expert Faculty</li>
+        <li>Regular Mock Exams</li>
+        <li>Result-Oriented Training</li>
       </ul>
-      <a href="#">Learn More →</a>
     </div>
 
     <div class="program-card">
@@ -119,11 +150,11 @@
       <h3>CMA Courses</h3>
       <p>Professional accounting programs.</p>
       <ul>
-        <li>Foundation</li>
-        <li>Inter</li>
-        <li>Final</li>
+        <li>Foundation to Final Levels</li>
+        <li>Practical Accounting Focus</li>
+        <li>Test Series & Evaluation</li>
+        <li>Career-Oriented Coaching</li>
       </ul>
-      <a href="#">Learn More →</a>
     </div>
 
     <div class="program-card">
@@ -131,56 +162,50 @@
       <h3>B.Com</h3>
       <p>Degree with specialization.</p>
       <ul>
-        <li>Regular</li>
-        <li>Training</li>
-        <li>Placements</li>
+        <li>Regular Academic Training</li>
+        <li>Practical Skill Development</li>
+        <li>Placement Assistance</li>
+        <li>Career Guidance Support</li>
       </ul>
-      <a href="#">Learn More →</a>
     </div>
 
   </div>
 
 </section>
 
-<!-- ACHIEVEMENTS -->
-<section class="achievements">
+<section class="youtube-section">
 
-  <h2>Our Achievements</h2>
-  <p class="sub">Proud moments that define our commitment to excellence</p>
+  <h2>Youtube Video</h2>
 
-  <div class="achieve-grid">
+  <div class="video-grid">
 
-    <div class="achieve-card">
-      <div class="icon-box">🏆</div>
-      <h3>AIR 1-100</h3>
-      <h4>Top Rankers</h4>
-      <p>Students achieving All India Ranks</p>
-    </div>
-
-    <div class="achieve-card">
-      <div class="icon-box">👥</div>
-      <h3>1000+</h3>
-      <h4>Students</h4>
-      <p>Enrolled across all programs</p>
-    </div>
-
-    <div class="achieve-card">
-      <div class="icon-box">📈</div>
-      <h3>95%</h3>
-      <h4>Success Rate</h4>
-      <p>Students clearing exams</p>
-    </div>
-
-    <div class="achieve-card">
-      <div class="icon-box">🏅</div>
-      <h3>25+</h3>
-      <h4>Years</h4>
-      <p>Of educational excellence</p>
-    </div>
-
+  <!-- VIDEO 1 -->
+  <div class="video-card">
+    <a href="https://youtu.be/DPlYitBB75o" target="_blank">
+      <img src="https://img.youtube.com/vi/DPlYitBB75o/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
   </div>
-</section>
 
+  <!-- VIDEO 2 -->
+  <div class="video-card">
+    <a href="https://youtu.be/P4pVJqt6ahs" target="_blank">
+      <img src="https://img.youtube.com/vi/P4pVJqt6ahs/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div class="video-card">
+    <a href="https://youtu.be/DYyvIVy_DO4" target="_blank">
+      <img src="https://img.youtube.com/vi/DYyvIVy_DO4/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
+  </div>
+
+</div>
+
+</section>
 <!-- WHY CHOOSE US -->
 <section class="features" id="features">
 
@@ -353,6 +378,11 @@
 </div>
 <!-- RIGHT SIDE SOCIAL BAR -->
 <div class="side-social">
+  <a href="https://youtube.com/@caravikiranballa6671" 
+   target="_blank" 
+   class="social-btn youtube">
+   <i class="fab fa-youtube"></i>
+  </a>
 
   <a href="tel:+919100715767" class="social-btn call">
     <i class="fas fa-phone"></i>
@@ -366,6 +396,16 @@
     <i class="fab fa-instagram"></i>
   </a>
 
+</div>
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+
+    <span class="close-popup">&times;</span>
+
+    <img src="popup.jpeg" alt="Admission Open">
+
+  </div>
 </div>
 </body>
 </html>
