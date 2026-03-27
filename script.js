@@ -1,11 +1,41 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 /* =========================
+   HAMBURGER MENU TOGGLE
+========================= */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.getElementById("nav-menu");
+const navLinks = document.querySelectorAll("#nav-menu a");
+
+if (hamburger) {
+  hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close menu when a link is clicked
+  navLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function(event) {
+    if (!event.target.closest(".navbar")) {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  });
+}
+
+/* =========================
    SCROLL REVEAL ANIMATION
 ========================= */
 function reveal(){
   const elements = document.querySelectorAll(
-    ".hero, .hero-left, .hero-right, .programs, .program-card, .achievements, .achieve-card, .features, .feature-card, .campus, .counselling, .cta, .footer"
+    ".programs, .program-card, .youtube-section, .video-card, .features, .feature-card, .campus, .counselling, .footer"
   );
 
   elements.forEach(el => {
@@ -14,11 +44,7 @@ function reveal(){
     const visible = 120;
 
     if(elementTop < windowHeight - visible){
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0)";
-    } else {
-      el.style.opacity = "0";
-      el.style.transform = "translateY(60px)";
+      el.classList.add("active");
     }
   });
 }
@@ -30,11 +56,11 @@ window.addEventListener("load", reveal);
 /* =========================
    NAV ACTIVE CLICK
 ========================= */
-const navLinks = document.querySelectorAll("nav a");
+const navLinkItems = document.querySelectorAll("nav a");
 
-navLinks.forEach(link => {
+navLinkItems.forEach(link => {
   link.addEventListener("click", function(){
-    navLinks.forEach(l => l.classList.remove("active"));
+    navLinkItems.forEach(l => l.classList.remove("active"));
     this.classList.add("active");
   });
 });
@@ -43,7 +69,7 @@ navLinks.forEach(link => {
 /* =========================
    BUTTON RIPPLE EFFECT
 ========================= */
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("button:not(.hamburger)");
 
 buttons.forEach(btn => {
   btn.style.position = "relative";
@@ -126,6 +152,64 @@ sliders.forEach(slider => {
     slides[index].classList.add("active");
   }, 3000);
 });
+
+/* ===== BACKGROUND IMAGE SLIDER ===== */
+const backgroundSlider = document.querySelector(".background-slider");
+if (backgroundSlider) {
+  const bgSlides = backgroundSlider.querySelectorAll(".bg-slide");
+  let bgIndex = 0;
+
+  setInterval(() => {
+    bgSlides[bgIndex].classList.remove("active");
+    bgIndex = (bgIndex + 1) % bgSlides.length;
+    bgSlides[bgIndex].classList.add("active");
+  }, 4000);
+}
+const counters = document.querySelectorAll(".stat h3");
+
+counters.forEach(counter => {
+  const target = +counter.getAttribute("data-target");
+  let count = 0;
+
+  const updateCount = () => {
+    const increment = target / 100;
+
+    if(count < target){
+      count += increment;
+      counter.innerText = Math.floor(count);
+      setTimeout(updateCount, 20);
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  updateCount();
+});
+
+/* ===== POPUP HANDLING ===== */
+let popup = document.getElementById("popup");
+let closeBtn = document.querySelector(".close-popup");
+
+if (popup && closeBtn) {
+  // FUNCTION TO SHOW POPUP
+  function showPopup(){
+    popup.style.display = "flex";
+  }
+
+  // FUNCTION TO HIDE POPUP
+  function hidePopup(){
+    popup.style.display = "none";
+  }
+
+  // SHOW EVERY 5 SECONDS
+  setInterval(showPopup, 20000);
+
+  // CLOSE BUTTON
+  closeBtn.onclick = function(){
+    hidePopup();
+  }
+}
+
 });
 
 function scrollToSection(id){
