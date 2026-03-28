@@ -198,6 +198,10 @@ counters.forEach(counter => {
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close-popup");
 const popupApplyBtn = document.querySelector(".popup-apply-btn");
+const popupYoutubeBtn = document.querySelector(".popup-youtube-btn");
+const POPUP_APPLY_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSfu3JSvOhOb-tE8sUu1uAsKMGfql8P62Brrf7xEUqzdOnVZ5A/viewform?usp=header";
+const POPUP_YOUTUBE_URL = "https://www.youtube.com/@caravikiranballa6671";
 
 if (popup) {
   function showPopup() {
@@ -220,7 +224,14 @@ if (popup) {
   if (popupApplyBtn) {
     popupApplyBtn.addEventListener("click", function () {
       hidePopup();
-      scrollToSection("youtube");
+      window.open(POPUP_APPLY_FORM_URL, "_blank");
+    });
+  }
+
+  if (popupYoutubeBtn) {
+    popupYoutubeBtn.addEventListener("click", function () {
+      hidePopup();
+      window.open(POPUP_YOUTUBE_URL, "_blank");
     });
   }
 
