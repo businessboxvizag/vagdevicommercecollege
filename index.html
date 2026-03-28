@@ -1,51 +1,519 @@
-{
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "Start site server",
-      "type": "shell",
-      "command": "py -3 -m http.server 8080",
-      "options": {
-        "cwd": "${workspaceFolder}/index.html"
-      },
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "python-http",
-        "pattern": {
-          "regexp": "^$",
-          "file": 1,
-          "location": 2,
-          "message": 3
-        },
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": ".",
-          "endsPattern": "Serving HTTP on"
-        }
-      }
-    },
-    {
-      "label": "Start site server (Node)",
-      "type": "shell",
-      "command": "npx --yes http-server . -p 8080 -c-1",
-      "options": {
-        "cwd": "${workspaceFolder}/index.html"
-      },
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "http-server",
-        "pattern": {
-          "regexp": "^$",
-          "file": 1,
-          "location": 2,
-          "message": 3
-        },
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": "^Starting up http-server",
-          "endsPattern": "Available on:"
-        }
-      }
-    }
-  ]
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Vagdevi Commerce College</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar">
+  <div class="logo-box">
+
+  <!-- LOGO -->
+  <img src="logo.png" alt="Vagdevi Logo" class="logo-img">
+
+  <!-- TEXT -->
+  <div class="logo-text">
+    <h2>Vagdevi Commerce College</h2>
+    <span>Visakhapatnam | Since 2014</span>
+    <span>Recognised by Govt. of Andhra Pradesh</span>
+  </div>
+
+</div>
+  
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="nav-menu">
+  <a href="#home" class="active">Home</a>
+  <a href="#programs">Programs</a>
+  <a href="#features">Features</a>
+  <a href="#reviews">Reviews</a>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-left">
+    <div class="badge">Admissions Open 2026</div>
+
+    <h1>
+      Transform Your <br>
+      Career in <span>Commerce</span>
+    </h1>
+
+    <p>
+      Premier education for CA, CMA, B.Com, and Intermediate students in Visakhapatnam.
+    </p>
+
+    <div class="buttons">
+      <button class="primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfu3JSvOhOb-tE8sUu1uAsKMGfql8P62Brrf7xEUqzdOnVZ5A/viewform?usp=header', '_blank')">Apply Now →</button>
+      <button class="secondary" onclick="scrollToSection('counselling')">Book Counselling</button>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    
+    <div class="slider single">
+
+        <img src="rank1.jpg" class="active">
+        <img src="faculty2.png">
+
+        <!-- ✅ MOVE HERE -->
+        <div class="floating-card">
+            <div class="icon">🏆</div>
+            <div>
+                <p>AIR Ranks</p>
+                <strong>Top Achievers</strong>
+            </div>
+        </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section class="stats-bar">
+
+  <div class="stat">
+    <h3 data-target="4000">0</h3>
+    <p>Students Enrolled</p>
+  </div>
+
+  <div class="stat">
+    <h3 data-target="60">0</h3>
+    <p>Average Success Rate in first attempt(%)</p>
+  </div>
+
+  <div class="stat">
+    <h3 data-target="14">0</h3>
+    <p>Years Excellence</p>
+  </div>
+
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+
+  <h2>Our Programs</h2>
+  <p class="sub">Choose from our comprehensive range of commerce and professional courses</p>
+
+  <div class="program-grid">
+    <div class="program-card"> 
+  <div class="icon green">⭐</div>
+  <h3>Super 40 (MEC / CEC)</h3>
+  <p>Elite program designed for CA Foundation.</p>
+  <ul>
+    <li>CA Foundation completed in 1st year</li>
+    <li>2nd year focused on revision & exams</li>
+    <li>Intensive writing practice & tests</li>
+  </ul>
+  </div>
+
+    <div class="program-card">
+      <div class="icon blue">📘</div>
+      <h3>Inter (MEC / CEC)</h3>
+      <p>Build a strong foundation with our programs.</p>
+      <ul>
+        <li>Expert Faculty Guidance</li>
+        <li>Regular Weekly Tests</li>
+        <li>Complete Study Material</li>
+        <li>Strong Concept Building</li>
+      </ul>
+    </div>
+
+    <div class="program-card">
+      <div class="icon green">🧮</div>
+      <h3>CA Courses</h3>
+      <p>Industry experienced coaching.</p>
+      <ul>
+        <li>Foundation to Final Support</li>
+        <li>Industry Expert Faculty</li>
+        <li>Regular Mock Exams</li>
+        <li>Result-Oriented Training</li>
+      </ul>
+    </div>
+
+    <div class="program-card">
+      <div class="icon purple">📈</div>
+      <h3>CMA Courses</h3>
+      <p>Professional accounting programs.</p>
+      <ul>
+        <li>Foundation to Final Levels</li>
+        <li>Practical Accounting Focus</li>
+        <li>Test Series & Evaluation</li>
+        <li>Career-Oriented Coaching</li>
+      </ul>
+    </div>
+
+    <div class="program-card">
+      <div class="icon orange">🎓</div>
+      <h3>B.Com</h3>
+      <p>Degree with specialization.</p>
+      <ul>
+        <li>Regular Academic Training</li>
+        <li>Practical Skill Development</li>
+        <li>Placement Assistance</li>
+        <li>Career Guidance Support</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="youtube-section" id="youtube">
+
+  <h2>Youtube Video</h2>
+
+  <div class="video-grid">
+
+  <!-- VIDEO 1 -->
+  <div class="video-card">
+    <a href="https://youtu.be/DPlYitBB75o" target="_blank">
+      <img src="https://img.youtube.com/vi/DPlYitBB75o/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
+  </div>
+
+  <!-- VIDEO 2 -->
+  <div class="video-card">
+    <a href="https://youtu.be/P4pVJqt6ahs" target="_blank">
+      <img src="https://img.youtube.com/vi/P4pVJqt6ahs/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
+  </div>
+
+  <!-- VIDEO 3 -->
+  <div class="video-card">
+    <a href="https://youtu.be/DYyvIVy_DO4" target="_blank">
+      <img src="https://img.youtube.com/vi/DYyvIVy_DO4/hqdefault.jpg" class="thumb">
+      <div class="play-btn">▶</div>
+    </a>
+  </div>
+
+</div>
+
+</section>
+<!-- WHY CHOOSE US -->
+<section class="features" id="features">
+
+  <h2>Why Choose Us</h2>
+  <p class="sub">We provide the best environment for your success</p>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="icon">👨‍🏫</div>
+      <h3>Expert Faculty</h3>
+      <p>Learn from highly experienced professionals.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">💻</div>
+      <h3>Digital Classrooms</h3>
+      <p>Modern teaching with smart classrooms.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">📝</div>
+      <h3>Mock Tests</h3>
+      <p>Regular assessments to track progress.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">📚</div>
+      <h3>Study Material</h3>
+      <p>Comprehensive updated resources.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">🎯</div>
+      <h3>Career Guidance</h3>
+      <p>Personal mentoring for success.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">🛡️</div>
+      <h3>Safe Campus</h3>
+      <p>Secure and student-friendly environment.</p>
+    </div>
+
+  </div>
+
+</section>
+<!-- CAMPUS LIFE -->
+<section class="campus">
+
+  <h2>Campus Life</h2>
+  <p class="sub">Experience our state-of-the-art facilities and vibrant campus environment</p>
+
+  <div class="campus-grid">
+
+    <!-- LEFT BIG IMAGE -->
+    <div class="campus-left">
+      <img src="https://images.unsplash.com/photo-1562774053-701939374585" alt="Campus Building">
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="campus-right">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Library">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Classroom">
+    </div>
+
+  </div>
+
+</section>
+<!-- STUDENT REVIEWS -->
+<section class="reviews" id="reviews">
+
+  <div class="reviews-inner">
+    <header class="reviews-header">
+      <h2>Student Reviews</h2>
+      <p class="sub">See what our students say about their learning experience</p>
+    </header>
+
+    <div class="reviews-layout">
+      <div class="reviews-visual" aria-hidden="true">
+        <div class="reviews-visual-card">
+          <svg class="reviews-quote-svg" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <defs>
+              <linearGradient id="rq-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#22a45a;stop-opacity:0.25"/>
+                <stop offset="100%" style="stop-color:#0d2c4a;stop-opacity:0.15"/>
+              </linearGradient>
+            </defs>
+            <rect width="120" height="100" rx="16" fill="url(#rq-grad)"/>
+            <path d="M28 38c0-8 6-14 14-14h8v14H42v18h-14V38zm48 0c0-8 6-14 14-14h8v14H90v18H76V38z" fill="#22a45a" opacity="0.35"/>
+            <circle cx="88" cy="72" r="6" fill="#22a45a" opacity="0.5"/>
+            <circle cx="102" cy="62" r="4" fill="#f4b400" opacity="0.7"/>
+          </svg>
+          <p class="reviews-visual-label">Trusted by thousands</p>
+          <div class="reviews-visual-stars" aria-hidden="true">★★★★★</div>
+        </div>
+      </div>
+
+      <div class="reviews-carousel">
+        <button type="button" class="review-nav prev" aria-label="Previous reviews">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="reviews-container">
+          <div class="reviews-scroll">
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Vagdevi Commerce College has been a game-changer for my CA preparation. The faculty is incredibly supportive and the study material is comprehensive. I cleared my Inter with flying colors!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Priya Sharma</div>
+          <div class="reviewer-course">CA Intermediate - AIR 156</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"The Super 40 program is exceptional. The teachers understand each student's weaknesses and provide personalized attention. I highly recommend this college to anyone serious about their CA career."</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Rajesh Kumar</div>
+          <div class="reviewer-course">CA Foundation - Topper</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"The digital classrooms and mock tests helped me practice extensively. The revision sessions before exams were incredibly helpful. Thanks to Vagdevi, I achieved my dream!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Anjali Patel</div>
+          <div class="reviewer-course">B.Com with Honors</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"The CMA course at Vagdevi is world-class. The practical approach to accounting and the experienced faculty made studying enjoyable. I got placed at a top firm right after!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Vikram Singh</div>
+          <div class="reviewer-course">CMA Final - Placed</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Outstanding teaching quality and a very supportive environment. The career guidance sessions were instrumental in helping me secure a good job. Truly grateful for the entire team!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Neha Verma</div>
+          <div class="reviewer-course">Inter MEC - Placed in Big 4</div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <p class="review-text">"Best investment I made for my education. The faculty really cares about student success. My concepts are crystal clear and I feel confident about my exams. Highly recommended!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-name">Arjun Reddy</div>
+          <div class="reviewer-course">CA Foundation - All India Rank 89</div>
+        </div>
+      </div>
+
+          </div>
+        </div>
+
+        <button type="button" class="review-nav next" aria-label="Next reviews">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="review-dots" role="tablist" aria-label="Review slides"></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- FREE COUNSELLING -->
+<section class="counselling" id="counselling">
+
+  <h2>Get Free Counselling</h2>
+  <p class="sub">Our experts will guide you to choose the right course for your career</p>
+
+  <div class="form-container">
+
+    <form>
+
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name">
+
+      <label>Phone Number</label>
+      <input type="text" placeholder="Enter your phone number">
+
+      <button type="button" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSdsMHMsTOnBsPlzQ99WqP80XyE-8K-tdyfz78N19XYTuV7eeA/viewform?usp=header', '_blank')">Book Free Counselling ✈</button>
+    </form>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <div class="logo">
+        <div class="icon">🎓</div>
+        <div>
+          <h3>Vagdevi Commerce College</h3>
+          <span>Excellence in Commerce Education</span>
+        </div>
+      </div>
+
+      <p>
+        Empowering students with quality education in commerce and professional courses since 2001.
+        Join us to transform your career aspirations into reality.
+      </p>
+
+      <div class="socials">
+        <span>📘</span>
+        <span>📷</span>
+        <span>💼</span>
+        <span>▶️</span>
+      </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a>About Us</a>
+      <a>Admissions</a>
+      <a>Courses</a>
+      <a>Faculty</a>
+      <a>Placements</a>
+      <a>Contact</a>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+
+      <p>📍 9-25-4,Near Timpany School main gate,CBM Compound, Visakhapatnam,<br> Andhra Pradesh 530003</p>
+      <p>📞 9100715767 </p>
+      <p>✉ vagdevicommercecollege.in</p>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="footer-bottom">
+    <p>© 2026 Vagdevi Commerce College. All rights reserved.</p>
+
+    <div class="footer-policy">
+      <span>Privacy Policy</span>
+      <span>Terms & Conditions</span>
+    </div>
+  </div>
+
+</footer>
+<script src="script.js"></script>
+<!-- GOOGLE FORM MODAL -->
+<div id="formModal" class="modal">
+
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfu3JSvOhOb-tE8sUu1uAsKMGfql8P62Brrf7xEUqzdOnVZ5A/viewform?embedded=true"
+      width="100%" 
+      height="500" 
+      frameborder="0">
+    </iframe>
+
+  </div>
+
+</div>
+<!-- RIGHT SIDE SOCIAL BAR -->
+<div class="side-social">
+  <a href="https://youtube.com/@caravikiranballa6671" 
+   target="_blank" 
+   class="social-btn youtube">
+   <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="tel:+919100715767" class="social-btn call">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <a href="https://wa.me/919100715767" target="_blank" class="social-btn whatsapp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.instagram.com/vagdevicommercecollege_/" target="_blank" class="social-btn instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+</div>
+<!-- POPUP -->
+<div id="popup" class="popup" role="dialog" aria-modal="true" aria-labelledby="popup-heading">
+  <div class="popup-content">
+
+    <button type="button" class="close-popup" aria-label="Close">&times;</button>
+
+    <img src="popup.jpeg" alt="Admission Open">
+
+    <h2 id="popup-heading" class="visually-hidden">Admissions</h2>
+    <button type="button" class="popup-apply-btn">Apply Now →</button>
+
+  </div>
+</div>
+</body>
+</html>
