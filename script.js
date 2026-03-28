@@ -35,7 +35,7 @@ if (hamburger) {
 ========================= */
 function reveal(){
   const elements = document.querySelectorAll(
-    ".programs, .program-card, .youtube-section, .video-card, .features, .feature-card, .campus, .counselling, .footer"
+    ".programs, .program-card, .youtube-section, .features, .feature-card, .campus, .counselling, .footer"
   );
 
   elements.forEach(el => {
@@ -138,13 +138,20 @@ applyButtons.forEach(btn => {
     );
   });
 });
-/* ===== DOUBLE SLIDER ===== */
-
+/* ===== HERO IMAGE SLIDER ===== */
 const sliders = document.querySelectorAll(".slider");
 
 sliders.forEach(slider => {
-  const slides = slider.querySelectorAll(".slide");
-  let index = 0;
+  const slides = Array.from(slider.children).filter(
+    (el) => el.tagName === "IMG"
+  );
+  if (!slides.length) return;
+
+  let index = Math.max(
+    0,
+    slides.findIndex((img) => img.classList.contains("active"))
+  );
+  slides.forEach((img, i) => img.classList.toggle("active", i === index));
 
   setInterval(() => {
     slides[index].classList.remove("active");
@@ -157,13 +164,14 @@ sliders.forEach(slider => {
 const backgroundSlider = document.querySelector(".background-slider");
 if (backgroundSlider) {
   const bgSlides = backgroundSlider.querySelectorAll(".bg-slide");
-  let bgIndex = 0;
-
-  setInterval(() => {
-    bgSlides[bgIndex].classList.remove("active");
-    bgIndex = (bgIndex + 1) % bgSlides.length;
-    bgSlides[bgIndex].classList.add("active");
-  }, 4000);
+  if (bgSlides.length) {
+    let bgIndex = 0;
+    setInterval(() => {
+      bgSlides[bgIndex].classList.remove("active");
+      bgIndex = (bgIndex + 1) % bgSlides.length;
+      bgSlides[bgIndex].classList.add("active");
+    }, 4000);
+  }
 }
 const counters = document.querySelectorAll(".stat h3");
 
@@ -187,29 +195,152 @@ counters.forEach(counter => {
 });
 
 /* ===== POPUP HANDLING ===== */
-let popup = document.getElementById("popup");
-let closeBtn = document.querySelector(".close-popup");
+const popup = document.getElementById("popup");
+const closeBtn = document.querySelector(".close-popup");
+const popupApplyBtn = document.querySelector(".popup-apply-btn");
 
-if (popup && closeBtn) {
-  // FUNCTION TO SHOW POPUP
-  function showPopup(){
+if (popup) {
+  function showPopup() {
     popup.style.display = "flex";
   }
 
-  // FUNCTION TO HIDE POPUP
-  function hidePopup(){
+  function hidePopup() {
     popup.style.display = "none";
   }
 
-  // SHOW EVERY 5 SECONDS
   setInterval(showPopup, 20000);
 
-  // CLOSE BUTTON
-  closeBtn.onclick = function(){
-    hidePopup();
+  if (closeBtn) {
+    closeBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      hidePopup();
+    });
   }
+
+  if (popupApplyBtn) {
+    popupApplyBtn.addEventListener("click", function () {
+      hidePopup();
+      scrollToSection("youtube");
+    });
+  }
+
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      hidePopup();
+    }
+  });
 }
 
+  /* =========================
+     REVIEWS CAROUSEL (scroll + auto)
+  ========================= */
+  function debounce(fn, ms) {
+    let t;
+    return function () {
+      clearTimeout(t);
+      t = setTimeout(fn, ms);
+    };
+  }
+
+  const reviewsScroll = document.querySelector(".reviews-scroll");
+  const reviewPrev = document.querySelector(".review-nav.prev");
+  const reviewNext = document.querySelector(".review-nav.next");
+  const reviewDots = document.querySelector(".review-dots");
+
+  let reviewIndex = 0;
+  let reviewCards = [];
+
+  function getReviewCards() {
+    if (!reviewsScroll) return [];
+    return Array.from(reviewsScroll.querySelectorAll(".review-card"));
+  }
+
+  function scrollReviewsToIndex(i) {
+    if (!reviewsScroll) return;
+    reviewCards = getReviewCards();
+    if (!reviewCards.length) return;
+
+    reviewIndex = ((i % reviewCards.length) + reviewCards.length) % reviewCards.length;
+    const card = reviewCards[reviewIndex];
+    const target =
+      card.offsetLeft - (reviewsScroll.clientWidth - card.offsetWidth) / 2;
+    const max = reviewsScroll.scrollWidth - reviewsScroll.clientWidth;
+    reviewsScroll.scrollTo({
+      left: Math.max(0, Math.min(target, max)),
+      behavior: "smooth",
+    });
+
+    if (reviewDots) {
+      reviewDots.querySelectorAll(".review-dot").forEach((dot, idx) => {
+        dot.classList.toggle("current", idx === reviewIndex);
+        dot.setAttribute("aria-current", idx === reviewIndex ? "true" : "false");
+      });
+    }
+  }
+
+  function stepReviews(delta) {
+    reviewCards = getReviewCards();
+    if (!reviewCards.length) return;
+    scrollReviewsToIndex(reviewIndex + delta);
+  }
+
+  function buildReviewDots() {
+    if (!reviewDots || !reviewsScroll) return;
+    reviewCards = getReviewCards();
+    reviewDots.innerHTML = "";
+    reviewCards.forEach((_, idx) => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "review-dot" + (idx === 0 ? " current" : "");
+      btn.setAttribute("aria-label", "Go to review " + (idx + 1));
+      if (idx === 0) btn.setAttribute("aria-current", "true");
+      btn.addEventListener("click", () => scrollReviewsToIndex(idx));
+      reviewDots.appendChild(btn);
+    });
+  }
+
+  if (reviewsScroll) {
+    buildReviewDots();
+    reviewCards = getReviewCards();
+
+    if (reviewPrev) reviewPrev.addEventListener("click", () => stepReviews(-1));
+    if (reviewNext) reviewNext.addEventListener("click", () => stepReviews(1));
+
+    let reviewScrollTimer = setInterval(() => stepReviews(1), 6000);
+
+    reviewsScroll.addEventListener("mouseenter", () => {
+      clearInterval(reviewScrollTimer);
+    });
+    reviewsScroll.addEventListener("mouseleave", () => {
+      clearInterval(reviewScrollTimer);
+      reviewScrollTimer = setInterval(() => stepReviews(1), 6000);
+    });
+
+    reviewsScroll.addEventListener("scroll", () => {
+      const cards = getReviewCards();
+      if (!cards.length) return;
+      const mid = reviewsScroll.scrollLeft + reviewsScroll.clientWidth / 2;
+      let best = 0;
+      let bestDist = Infinity;
+      cards.forEach((card, idx) => {
+        const cMid = card.offsetLeft + card.offsetWidth / 2;
+        const d = Math.abs(cMid - mid);
+        if (d < bestDist) {
+          bestDist = d;
+          best = idx;
+        }
+      });
+      reviewIndex = best;
+    });
+
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        buildReviewDots();
+        scrollReviewsToIndex(reviewIndex);
+      }, 150)
+    );
+  }
 });
 
 function scrollToSection(id){
