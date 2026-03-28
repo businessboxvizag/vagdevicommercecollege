@@ -69,16 +69,7 @@
     <div class="slider single">
 
         <img src="rank1.jpg" class="active">
-        <img src="faculty2.png">
-
-        <!-- ✅ MOVE HERE -->
-        <div class="floating-card">
-            <div class="icon">🏆</div>
-            <div>
-                <p>AIR Ranks</p>
-                <strong>Top Achievers</strong>
-            </div>
-        </div>
+        <img src="rank2.jpg">
 
     </div>
 
@@ -262,15 +253,17 @@
 
   <div class="campus-grid">
 
-    <!-- LEFT BIG IMAGE -->
-    <div class="campus-left">
-      <img src="https://images.unsplash.com/photo-1562774053-701939374585" alt="Campus Building">
+    <div class="campus-left campus-photo-frame">
+      <img src="calss1.jpeg" alt="Campus Building" loading="lazy">
     </div>
 
-    <!-- RIGHT SIDE -->
     <div class="campus-right">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Library">
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b" alt="Classroom">
+      <div class="campus-photo-frame">
+        <img src="calss1.jpeg" alt="Library" loading="lazy">
+      </div>
+      <div class="campus-photo-frame">
+        <img src="class2.jpeg" alt="Classroom" loading="lazy">
+      </div>
     </div>
 
   </div>
@@ -490,7 +483,13 @@
     <img src="popup.jpeg" alt="Admission Open">
 
     <h2 id="popup-heading" class="visually-hidden">Admissions</h2>
-    <button type="button" class="popup-apply-btn">Apply Now →</button>
+    <div class="popup-actions">
+      <button type="button" class="popup-apply-btn">Apply Now →</button>
+      <button type="button" class="popup-youtube-btn">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+        YouTube
+      </button>
+    </div>
 
   </div>
 </div>
