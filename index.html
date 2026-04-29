@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7GN6S1Q5N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-Q7GN6S1Q5N');
-</script>
-  <head>
 <meta charset="UTF-8">
 
 <!-- ✅ PRIMARY SEO TITLE -->
@@ -134,8 +124,9 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
@@ -150,8 +141,11 @@
   <!-- TEXT -->
   <div class="logo-text">
     <h2>Vagdevi Commerce College</h2>
-    <span>Visakhapatnam | Since 2014</span>
-    <span>Recognised by Govt. of Andhra Pradesh</span>
+    <div class="logo-meta">
+      <span>Since 2014</span>
+      <span class="logo-dot"></span>
+      <span>Recognised by Govt. of Andhra Pradesh</span>
+    </div>
   </div>
 
 </div>
@@ -175,21 +169,23 @@
   <meta itemprop="name" content="Vagdevi Commerce College Visakhapatnam">
   <meta itemprop="description" content="Best commerce college in Visakhapatnam for CA, CMA, B.Com, MEC, CEC coaching">
 
+  <!-- LEFT COLUMN -->
   <div class="hero-left">
     <div class="badge">Admissions Open 2026</div>
 
-    <h1>
-      Transform Your <br>
-      Career in <span>Commerce</span>
-    </h1>
+    <h1>Vizag's best Commerce <br>college</h1>
 
-    <p>
-      Visakhapatnam's most trusted commerce college for <strong>CA Foundation</strong>, <strong>CA Inter</strong>, <strong>CMA</strong>, <strong>B.Com</strong> &amp; <strong>Intermediate MEC &amp; CEC</strong>. Expert faculty, digital classrooms &amp; result-oriented coaching since 2014.
-    </p>
+    <p>Vagdevi Commerce College is a leading institute for CA, CMA, and B.Com coaching in Vizag. With expert faculty, structured preparation, and proven results, we help students achieve top ranks in professional exams.</p>
+
+    <ul class="hero-checklist">
+      <li>✔ CA Foundation | CA Intermediate | CA Final</li>
+      <li>✔ CMA Foundation | CMA Intermediate</li>
+      <li>✔ B.Com with Professional Coaching</li>
+    </ul>
 
     <div class="buttons">
       <button class="primary" onclick="window.open('https://docs.google.com/forms/d/e/1FAIpQLSfu3JSvOhOb-tE8sUu1uAsKMGfql8P62Brrf7xEUqzdOnVZ5A/viewform?usp=header', '_blank')">Apply Now →</button>
-      <button class="secondary" onclick="scrollToSection('counselling')">Book Counselling</button>
+      <button class="secondary" onclick="scrollToSection('counselling')">Book Free Demo Class</button>
     </div>
 
     <!-- NOTICE BOARD -->
@@ -201,88 +197,77 @@
       </div>
       <div class="notice-scroll-wrap">
         <div class="notice-scroll-content">
-          <div class="notice-item">
-            <span class="notice-num">1</span>
-            <span>🌟 <strong>Super 40</strong> — Elite CA Foundation batch now enrolling!</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">2</span>
-            <span>📘 <strong>CA Foundation</strong> classes are currently ongoing — join now!</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">3</span>
-            <span>🧮 <strong>CMA Foundation</strong> class ongoing — limited seats available.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">4</span>
-            <span>📗 <strong>CA Inter</strong> class ongoing — enroll before it's full.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">5</span>
-            <span>🏫 <strong>Intermediate</strong> (MEC/CEC) new batch starting from <strong>June</strong>.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">6</span>
-            <span>📚 <strong>Study Material Access</strong> — Login to access all course materials online.</span>
-          </div>
+          <div class="notice-item"><span class="notice-num">1</span><span>🌟 <strong>Super 40</strong> — Elite CA Foundation batch now enrolling!</span></div>
+          <div class="notice-item"><span class="notice-num">2</span><span>📘 <strong>CA Foundation</strong> classes are currently ongoing — join now!</span></div>
+          <div class="notice-item"><span class="notice-num">3</span><span>🧮 <strong>CMA Foundation</strong> class ongoing — limited seats available.</span></div>
+          <div class="notice-item"><span class="notice-num">4</span><span>📗 <strong>CA Inter</strong> class ongoing — enroll before it's full.</span></div>
+          <div class="notice-item"><span class="notice-num">5</span><span>🏫 <strong>Intermediate</strong> (MEC/CEC) new batch starting from <strong>June</strong>.</span></div>
+          <div class="notice-item"><span class="notice-num">6</span><span>📚 <strong>Study Material Access</strong> — Login to access all course materials online.</span></div>
           <!-- Duplicate for seamless loop -->
-          <div class="notice-item">
-            <span class="notice-num">1</span>
-            <span>🌟 <strong>Super 40</strong> — Elite CA Foundation batch now enrolling!</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">2</span>
-            <span>📘 <strong>CA Foundation</strong> classes are currently ongoing — join now!</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">3</span>
-            <span>🧮 <strong>CMA Foundation</strong> class ongoing — limited seats available.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">4</span>
-            <span>📗 <strong>CA Inter</strong> class ongoing — enroll before it's full.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">5</span>
-            <span>🏫 <strong>Intermediate</strong> (MEC/CEC) new batch starting from <strong>June</strong>.</span>
-          </div>
-          <div class="notice-item">
-            <span class="notice-num">6</span>
-            <span>📚 <strong>Study Material Access</strong> — Login to access all course materials online.</span>
-          </div>
+          <div class="notice-item"><span class="notice-num">1</span><span>🌟 <strong>Super 40</strong> — Elite CA Foundation batch now enrolling!</span></div>
+          <div class="notice-item"><span class="notice-num">2</span><span>📘 <strong>CA Foundation</strong> classes are currently ongoing — join now!</span></div>
+          <div class="notice-item"><span class="notice-num">3</span><span>🧮 <strong>CMA Foundation</strong> class ongoing — limited seats available.</span></div>
+          <div class="notice-item"><span class="notice-num">4</span><span>📗 <strong>CA Inter</strong> class ongoing — enroll before it's full.</span></div>
+          <div class="notice-item"><span class="notice-num">5</span><span>🏫 <strong>Intermediate</strong> (MEC/CEC) new batch starting from <strong>June</strong>.</span></div>
+          <div class="notice-item"><span class="notice-num">6</span><span>📚 <strong>Study Material Access</strong> — Login to access all course materials online.</span></div>
         </div>
       </div>
-    </div>
+    </div><!-- /notice-board -->
 
-  </div>
+  </div><!-- /hero-left -->
 
+  <!-- RIGHT COLUMN -->
   <div class="hero-right">
-    
-    <div class="slider single">
 
-        <img src="rank1.jpg" class="active">
-        <img src="rank2.jpg">
-
-    </div>
-    <div class="materials">
-    <h4>Our Materials</h4>
-
-    <div class="scroll-box">
-      <div class="scroll-content">
-        <p><a class="material-link" onclick="openAuthModal('CA Foundation Notes Available')">CA final</a></p>
-        <p><a class="material-link" onclick="openAuthModal('Weekly Test Papers Released')">CA inter</a></p>
-        <p><a class="material-link" onclick="openAuthModal('Topper Answer Sheets Provided')">CA foundation</a></p>
-        <p><a class="material-link" onclick="openAuthModal('Revision Modules Updated')">CMA inter</a></p>
-        <p><a class="material-link" onclick="openAuthModal('Important Questions Bank')">CMA foundation</a></p>
-        <p><a class="material-link" onclick="openAuthModal('Mock Test Series Started')">CMA final</a></p>
-        <p><a class="material-link" onclick="openAuthModal('New Study Materials Added')">inter(MEC/CEC)</a></p>
+    <!-- RANKER SLIDESHOW -->
+    <div class="hero-video-wrap ranker-slider-wrap">
+      <div class="ranker-slider" id="rankerSlider">
+        <div class="ranker-slide active">
+          <img src="kaethik488.png" alt="B.Karthik - 488/500 MEC Topper" class="hero-video">
+        </div>
+        <div class="ranker-slide">
+          <img src="mounika490.png" alt="T.Mounika - 490/500 MEC Topper" class="hero-video">
+        </div>
+        <div class="ranker-slide">
+          <img src="nisha.png" alt="K.Nisha Kumari - 490/500 MEC Topper" class="hero-video">
+        </div>
+        <div class="ranker-slide">
+          <img src="krishna chandana.png" alt="Krishna Chandana - 982/1000 MEC Topper" class="hero-video">
+        </div>
+        <div class="ranker-slide">
+          <img src="ramya.png" alt="P.Ramya Sri - 982/1000 MEC Topper" class="hero-video">
+        </div>
+      </div>
+      <!-- Dot indicators -->
+      <div class="ranker-dots">
+        <span class="ranker-dot active" onclick="goToSlide(0)"></span>
+        <span class="ranker-dot" onclick="goToSlide(1)"></span>
+        <span class="ranker-dot" onclick="goToSlide(2)"></span>
+        <span class="ranker-dot" onclick="goToSlide(3)"></span>
+        <span class="ranker-dot" onclick="goToSlide(4)"></span>
       </div>
     </div>
-  </div>
 
-  </div>
+    <!-- OUR MATERIALS -->
+    <div class="materials">
+      <h4>Our Materials</h4>
+      <div class="scroll-box">
+        <div class="scroll-content">
+          <p><a class="material-link" onclick="openAuthModal('CA Foundation Notes Available')">CA foundation</a></p>
+          <p><a class="material-link" onclick="openAuthModal('Weekly Test Papers Released')">CMA inter</a></p>
+          <p><a class="material-link" onclick="openAuthModal('Topper Answer Sheets Provided')">CMA foundation</a></p>
+          <p><a class="material-link" onclick="openAuthModal('Revision Modules Updated')">CMA final</a></p>
+          <p><a class="material-link" onclick="openAuthModal('Important Questions Bank')">inter(MEC/CEC)</a></p>
+          <p><a class="material-link" onclick="openAuthModal('Mock Test Series Started')">CA inter</a></p>
+          <p><a class="material-link" onclick="openAuthModal('New Study Materials Added')">CA final</a></p>
+        </div>
+      </div>
+    </div><!-- /materials -->
+
+  </div><!-- /hero-right -->
 
 </section>
+
 <section class="stats-bar">
 
   <div class="stat">
@@ -302,11 +287,40 @@
 
 </section>
 
+<!-- ABOUT PREVIEW -->
+<section class="about-preview" id="about">
+
+    <!-- LEFT: text content -->
+    <div class="about-left">
+      <span class="about-tag"> Who We Are</span>
+      <h2>About <span>Vagdevi</span><br>Commerce College</h2>
+      <p class="about-lead">Vagdevi is one of the top commerce coaching institutes in Visakhapatnam, specializing in CA, CMA, and B.Com education. Our focus is on concept clarity, exam strategy, and consistent results.</p>
+      <p class="about-sub">We combine expert teaching, structured test series, and personalized mentoring to help students succeed in competitive professional exams. With a mission to provide quality education and career-focused training, we have built a strong reputation for producing successful professionals in commerce and finance.</p>
+
+      <ul class="about-list">
+        <li>Concept Clarity</li>
+        <li>Exam-Oriented Preparation</li>
+        <li>Regular Assessments</li>
+        <li>Personalized Mentoring</li>
+      </ul>
+
+      <a href="#programs" class="read-more-btn">Explore Courses</a>
+    </div>
+  </div>
+
+  <!-- MISSION STRIP -->
+  <div class="about-mission">
+    <span class="about-mission-icon">💡</span>
+    <p>At Vagdevi commerce college we don't just teach subjects — <strong>we build careers.</strong> Every student has the potential to succeed with the right guidance, strategy, and discipline. Our experienced faculty ensures students not only understand concepts but also apply them effectively in exams.</p>
+  </div>
+
+</section>
+
 <!-- PROGRAMS -->
 <section class="programs" id="programs">
 
-  <h2>Our Programs</h2>
-  <p class="sub">Best CA, CMA, B.Com &amp; Intermediate MEC/CEC coaching in Visakhapatnam — career-oriented, result-driven programs</p>
+  <h2>Our Courses</h2>
+  <p class="sub">CA Coaching in Vizag | CMA Coaching in Vizag | B.Com Coaching — expert-led, result-driven programs</p>
 
   <div class="program-grid">
     <div class="program-card"> 
@@ -334,8 +348,8 @@
 
     <div class="program-card">
       <div class="icon green">🧮</div>
-      <h3>CA Courses — Foundation to Final</h3>
-      <p>Top CA Foundation, CA Inter &amp; CA Final coaching in Visakhapatnam by industry-experienced faculty.</p>
+      <h3>CA Coaching in Vizag</h3>
+      <p>Complete coaching for CA Foundation, Intermediate, and Final with expert faculty and structured preparation.</p>
       <ul>
         <li>Foundation to Final Support</li>
         <li>Industry Expert Faculty</li>
@@ -346,20 +360,20 @@
 
     <div class="program-card">
       <div class="icon purple">📈</div>
-      <h3>CMA Courses — Foundation to Final</h3>
-      <p>Professional CMA Foundation, CMA Inter &amp; CMA Final coaching in Vizag — result-oriented training.</p>
+      <h3>CMA Coaching in Vizag</h3>
+      <p>Focused training for CMA Foundation &amp; Intermediate with practical learning and exam-oriented approach.</p>
       <ul>
         <li>Foundation to Final Levels</li>
         <li>Practical Accounting Focus</li>
-        <li>Test Series & Evaluation</li>
+        <li>Test Series &amp; Evaluation</li>
         <li>Career-Oriented Coaching</li>
       </ul>
     </div>
 
     <div class="program-card">
       <div class="icon orange">🎓</div>
-      <h3>B.Com / BBA — Visakhapatnam</h3>
-      <p>Degree programme with specialization, placement assistance &amp; career guidance in Visakhapatnam.</p>
+      <h3>B.Com Coaching</h3>
+      <p>Integrated coaching with professional courses to build a strong commerce career.</p>
       <ul>
         <li>Regular Academic Training</li>
         <li>Practical Skill Development</li>
@@ -408,39 +422,45 @@
 <!-- WHY CHOOSE US -->
 <section class="features" id="features">
 
-  <h2>Why Vagdevi is the Best Commerce College in Visakhapatnam</h2>
-  <p class="sub">Expert faculty, digital classrooms, mock tests &amp; study material — everything you need to succeed in CA, CMA &amp; commerce</p>
+  <h2>Why Choose Vagdevi college?</h2>
+  <p class="sub">We don't just teach — we train students to rank. Expert faculty, proven results &amp; focused exam strategy.</p>
 
   <div class="features-grid">
 
     <div class="feature-card">
       <div class="icon">👨‍🏫</div>
-      <h3>Expert Faculty</h3>
-      <p>Learn CA &amp; CMA from highly experienced faculty with 15+ years of commerce teaching expertise in Visakhapatnam.</p>
+      <h3>Experienced CA &amp; CMA Faculty</h3>
+      <p>Learn from highly experienced CA &amp; CMA faculty with 15+ years of commerce teaching expertise in Visakhapatnam.</p>
     </div>
 
     <div class="feature-card">
-      <div class="icon">💻</div>
-      <h3>Digital Classrooms</h3>
-      <p>AC-equipped smart digital classrooms with modern teaching infrastructure for CA, CMA &amp; commerce students.</p>
+      <div class="icon">🏆</div>
+      <h3>Proven Results with Rank Holders</h3>
+      <p>Our students consistently secure top ranks in CA and CMA examinations across India.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="icon">📋</div>
+      <h3>Structured Study Plans</h3>
+      <p>AC-equipped smart digital classrooms with modern teaching infrastructure and well-organized study schedules.</p>
     </div>
 
     <div class="feature-card">
       <div class="icon">📝</div>
-      <h3>Mock Tests &amp; Assessments</h3>
+      <h3>Weekly Tests &amp; Performance Tracking</h3>
       <p>Regular mock tests, weekly assessments &amp; CA/CMA exam pattern practice to maximise your success rate.</p>
     </div>
 
     <div class="feature-card">
-      <div class="icon">📚</div>
-      <h3>Study Material</h3>
-      <p>Comprehensive, updated CA Foundation, CA Inter, CMA &amp; Intermediate study material provided to all students.</p>
+      <div class="icon">🎯</div>
+      <h3>Personalized Mentoring</h3>
+      <p>Personalised career counselling and mentoring for CA, CMA, B.Com &amp; commerce students in Visakhapatnam.</p>
     </div>
 
     <div class="feature-card">
-      <div class="icon">🎯</div>
-      <h3>Career Guidance &amp; Mentoring</h3>
-      <p>Personalised career counselling for CA, CMA, B.Com &amp; commerce students in Visakhapatnam.</p>
+      <div class="icon">💡</div>
+      <h3>Focus on Concept + Exam Strategy</h3>
+      <p>We ensure students not only understand concepts but also learn how to apply them effectively in exams.</p>
     </div>
 
     <div class="feature-card">
@@ -476,6 +496,12 @@
   </div>
 
 </section>
+<!-- RESULTS SECTION -->
+<section class="results-section" id="results">
+  <h2>Our Results – Rank Holders &amp; Success Stories</h2>
+  <p class="sub">Our students have consistently secured top ranks in CA and CMA examinations. We focus on disciplined preparation, regular testing, and result-oriented training.</p>
+</section>
+
 <!-- STUDENT REVIEWS -->
 <section class="reviews" id="reviews">
 
@@ -558,6 +584,29 @@
     <div class="review-dots" role="tablist" aria-label="Review slides"></div>
   </div>
 
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <h4>Q: Which is the best CA coaching institute in Vizag?</h4>
+      <p>A: Vagdevi Commerce College is one of the top institutes known for expert faculty and consistent results.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q: Do you provide CA Foundation coaching in Vizag?</h4>
+      <p>A: Yes, we offer complete coaching for CA Foundation, Intermediate, and Final.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q: Do you offer CMA coaching in Vizag?</h4>
+      <p>A: Yes, we provide CMA Foundation and Intermediate coaching with full support.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Q: Do you provide mock tests and study materials?</h4>
+      <p>A: Yes, we provide structured test series and comprehensive study materials.</p>
+    </div>
+  </div>
 </section>
 
 <!-- FREE COUNSELLING -->
